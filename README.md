@@ -7,7 +7,8 @@ delivered with a sleek UI featuring **aurora gradients, responsive design, theme
 ---
 
 ## 📸 Preview
-![Portfolio Preview](public/preview.png)
+![Portfolio Preview](./public/Preview.png)
+
 
 
 ## Features
