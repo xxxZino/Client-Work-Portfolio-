@@ -1,4 +1,4 @@
-# Client Work Portfolio 🌐
+# Client Work Portfolio 
 
 A modern and elegant **portfolio website** built with **Next.js 14, TypeScript, and Tailwind CSS**.  
 This project showcases expertise in **Public Administration, Policy Analysis, and Public Service Design**,  
@@ -6,7 +6,7 @@ delivered with a sleek UI featuring **aurora gradients, responsive design, theme
 
 ---
 
-## 📸 Preview
+## Preview
 ![Portfolio Preview](./public/Preview.png)
 
 
@@ -23,7 +23,7 @@ delivered with a sleek UI featuring **aurora gradients, responsive design, theme
 - **Clean Navigation** — responsive navbar with hamburger menu on mobile
 
 
-## 🛠 Tech Stack
+## Tech Stack
 - [Next.js 14](https://nextjs.org/) — React framework
 - [TypeScript](https://www.typescriptlang.org/) — type safety
 - [Tailwind CSS](https://tailwindcss.com/) — utility-first styling
