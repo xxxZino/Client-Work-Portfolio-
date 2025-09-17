@@ -1,103 +1,152 @@
+"use client";
+
 import Image from "next/image";
+import Link from "next/link";
+import Counter from "../components/Counter";
+import Timeline, { TL } from "../components/Timeline";
+import CertificateCarousel from "../components/CertificateCarousel";
+import Reveal from "../components/Reveal";
 
-export default function Home() {
+const perjalanan: TL[] = [
+  { judul: "Asisten Dosen", sub: "Univ. Proklamasi 45", des: "Mengajar, membimbing, dan mendukung riset akademik.", tahun: "2024 - Sekarang" },
+  { judul: "Bendahara Yayasan", sub: "Beryl Mahaprana Media", des: "Mengelola keuangan dengan transparansi & akuntabilitas.", tahun: "2024 - Sekarang" },
+  { judul: "Editor Buku", sub: "Beryl Mahaprana Media", des: "Menyunting, menerbitkan karya ilmiah, dan bukur ajar.", tahun: "2024 - Sekarang" },
+  { judul: "PKL TV Berita Karawang", sub: "Karawang", des: "Mendukung administrasi redaksi & komunikasi tim.", tahun: "2019" },
+
+
+];
+
+export default function HomePage() {
   return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+    <main className="space-y-14 md:space-y-16">
+      {/* HERO */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 md:pt-28">
+        <div className="aurora-panel aurora-intense p-6 sm:p-8 md:p-10 shadow-soft">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center">
+            {/* kiri */}
+            <div className="space-y-5 md:space-y-6">
+              <Reveal>
+                <div className="inline-flex items-center rounded-full glass px-3 py-1 text-xs text-subtle">
+                  Administrasi Publik • Manajemen Proyek • Pelayanan
+                </div>
+              </Reveal>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+              <Reveal delay={80}>
+                <h1 className="text-4xl sm:text-5xl font-bold leading-tight text-balance text-body">
+                  Dari teori ke praktik, untuk{" "}
+                  <span className="bg-gradient-to-r from-sky-400 to-blue-600 bg-clip-text text-transparent">
+                    dampak nyata
+                  </span>
+                </h1>
+              </Reveal>
+
+              <Reveal delay={160}>
+                <p className="text-subtle max-w-prose text-base sm:text-lg">
+                  Saya <b>Sinta Juliyanti</b>, tertarik menghubungkan administrasi publik dengan
+                  praktik nyata untuk menghasilkan manajemen proyek yang lebih baik.
+                </p>
+              </Reveal>
+
+              {/* CTA: stack di mobile */}
+              <Reveal delay={240}>
+                <div className="flex flex-col sm:flex-row gap-3 sm:items-center">
+                  <Link
+                    href="/kontak/page"
+                    className="inline-flex justify-center items-center gap-2 rounded-2xl px-5 py-3 font-medium bg-[color:var(--color-primary)] text-white hover:brightness-105 active:scale-95 w-full sm:w-auto"
+                  >
+                    Ayo Kolaborasi
+                  </Link>
+                  <a
+                    href="/CV.pdf"
+                    className="inline-flex justify-center items-center gap-2 rounded-2xl px-5 py-3 font-medium glass text-body hover:brightness-110 w-full sm:w-auto"
+                  >
+                    Unduh CV
+                  </a>
+                </div>
+              </Reveal>
+            </div>
+
+            {/* kanan */}
+            <Reveal delay={140}>
+              <div className="relative">
+                <div className="absolute inset-0 -z-10 rounded-3xl blur-2xl bg-gradient-to-br from-sky-200/70 via-purple-200/60 to-emerald-200/60 dark:from-sky-400/20 dark:via-purple-400/16 dark:to-emerald-400/12" />
+                <div className="rounded-2xl glass shadow-soft p-3 sm:p-4 animate-[float_6s_ease-in-out_infinite]">
+                  <Image
+                    src="/foto-formal.jpg"
+                    alt="Foto Formal"
+                    width={900}
+                    height={900}
+                    className="rounded-2xl object-cover w-full h-auto"
+                    sizes="(max-width: 768px) 100vw, 50vw"
+                    priority
+                  />
+                </div>
+              </div>
+            </Reveal>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        <style>{`@keyframes float{0%{transform:translateY(0)}50%{transform:translateY(-8px)}100%{transform:translateY(0)}}`}</style>
+      </section>
+
+      {/* WAVE: beri tinggi & positioning aman */}
+      <div className="relative h-10 sm:h-12 aurora-strip">
+        <svg className="absolute inset-x-0 -top-8 sm:-top-10 w-full h-full" viewBox="0 0 1440 100" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,64L60,69.3C120,75,240,85,360,85.3C480,85,600,75,720,64C840,53,960,43,1080,42.7C1200,43,1320,53,1380,58.7L1440,64L1440,0L0,0Z" />
+        </svg>
+      </div>
+
+      {/* VALUE PILLARS: tambah sm:grid-cols-2 */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="aurora-panel p-6 sm:p-8 md:p-10 shadow-soft">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 md:gap-6">
+            {[
+              { t: "Governance & Service", d: "Dari perencanaan hingga evaluasi, setiap langkah terukur dan bermakna." },
+              { t: "Research & Publication", d: "Produksi pengetahuan untuk praktik administrasi publik." },
+              { t: "Manajemen Proyek", d: "Dari perencanaan hingga evaluasi, setiap langkah terukur dan bermakna." },
+            ].map((i, idx) => (
+              <Reveal key={i.t} delay={idx * 90}>
+                <div className="card-glass p-5 sm:p-6 h-full">
+                  <h3 className="text-lg font-semibold mb-2 text-body">{i.t}</h3>
+                  <p className="text-subtle">{i.d}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* COUNTERS: center di mobile */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="aurora-panel p-6 sm:p-8 md:p-10 shadow-soft">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5 md:gap-6">
+            {[{n:11,l:"Partisipan Program & Layanan",s:"+"},{n:30,l:"Proyek & Kegiatan Dikelola",s:"+"},{n:2,l:"Karya Ilmiah & Publikasi",s:"+"}].map((it, i)=>(
+              <Reveal key={i} delay={i*100}>
+                <div className="card-glass p-7 sm:p-8 text-center">
+                  <div className="text-3xl md:text-4xl font-extrabold text-[color:var(--color-primary)]">
+                    <Counter end={it.n} />{it.s}
+                  </div>
+                  <p className="text-subtle mt-1">{it.l}</p>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+            {/* ================== TIMELINE ================== */}
+      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="aurora-panel p-6 md:p-10 shadow-soft">
+          <Reveal>
+            <div className="mb-6">
+              <h2 className="text-2xl font-bold text-body">Perjalanan</h2>
+              <p className="text-subtle">Ringkasan pendidikan & pengalaman utama.</p>
+            </div>
+          </Reveal>
+          <Reveal delay={80}>
+            <Timeline items={perjalanan} />
+          </Reveal>
+        </div>
+      </section>
+    </main>
   );
 }
