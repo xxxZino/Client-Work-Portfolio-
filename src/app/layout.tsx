@@ -10,6 +10,10 @@ const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"], variable: "--font-jakart
 export const metadata: Metadata = {
   title: "Sinta — Portofolio",
   description: "Portofolio Administrasi Publik: kebijakan, pelayanan, dan manajemen program.",
+  icons: {
+    icon: "/favicon.ico",
+
+  }
 };
 
 const ThemeInit = () => (
